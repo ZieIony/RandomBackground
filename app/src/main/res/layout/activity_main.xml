@@ -2,49 +2,57 @@
 <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent" android:layout_height="match_parent"
         android:id="@+id/background"
+        android:fitsSystemWindows="true"
         tools:context=".MainActivity">
 
-    <FrameLayout android:layout_margin="16dp" android:layout_gravity="center" android:padding="1px"
-                 android:background="#7f000000"
-                 android:layout_width="match_parent" android:layout_height="wrap_content"
-                 android:orientation="vertical">
-        <LinearLayout android:padding="16dp" android:layout_gravity="center" android:background="#ffffffff"
-                      android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:orientation="vertical">
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:fontFamily="sans-serif-light" android:layout_marginBottom="16dp"
-                      android:layout_marginTop="32dp"
-                      android:text="Hello again!" android:textSize="32sp"/>
-            <EditText android:hint="login" android:inputType="textEmailAddress" android:layout_width="match_parent"
-                      android:layout_height="wrap_content"/>
-            <EditText android:hint="password" android:inputType="textPassword" android:layout_width="match_parent"
-                      android:layout_height="wrap_content"/>
-            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
-                          android:layout_marginTop="16dp"
-                          android:layout_height="wrap_content">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                             android:background="#7f000000"
-                             android:layout_weight="1" android:layout_marginRight="8dp" android:padding="1px">
-                    <Button
-                            android:background="#ffffffff"
-                            android:id="@+id/generate"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="generate"/>
-                </FrameLayout>
-                <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                             android:background="#7f000000"
-                             android:layout_weight="1" android:layout_marginLeft="8dp" android:padding="1px">
-                    <Button
-                            android:background="#ffffffff"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="login"/>
-                </FrameLayout>
-            </LinearLayout>
+    <carbon.widget.LinearLayout app:carbon_strokeWidth="1px" app:carbon_stroke="?attr/carbon_dividerColor"
+                                android:layout_margin="16dp" android:padding="16dp" android:layout_gravity="center"
+                                android:background="#7fffffff"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:orientation="vertical">
+        <carbon.widget.TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:textAppearance="?attr/carbon_textAppearanceHeadline"
+                                android:textColor="?android:attr/textColorTertiary"
+                                android:layout_marginBottom="16dp"
+                                android:text="Hello again!" android:textSize="32sp"/>
+        <carbon.widget.EditText android:hint="login" android:inputType="textEmailAddress"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="16dp"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:layout_height="wrap_content"/>
+        <carbon.widget.EditText android:hint="password" android:inputType="textPassword"
+                                android:layout_marginTop="16dp"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:layout_marginBottom="16dp"
+                                android:focusableInTouchMode="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                      android:layout_marginTop="16dp"
+                      android:layout_height="wrap_content">
+            <carbon.widget.Button app:carbon_strokeWidth="1px" app:carbon_stroke="?attr/carbon_dividerColor"
+                                  app:carbon_cornerRadius="0dp" app:carbon_elevation="0dp"
+                                  android:background="#ffffffff"
+                                  android:layout_weight="1" android:layout_marginRight="8dp"
+                                  android:enabled="false"
+                                  android:layout_width="match_parent"
+                                  android:textColor="?android:attr/textColorTertiary"
+                                  android:layout_height="wrap_content"
+                                  android:text="login"/>
+            <carbon.widget.Button app:carbon_strokeWidth="1px" app:carbon_stroke="?attr/carbon_dividerColor"
+                                  app:carbon_cornerRadius="0dp" app:carbon_elevation="0dp"
+                                  android:textColor="?android:attr/textColorPrimary"
+                                  android:background="#ffffffff"
+                                  android:layout_weight="1" android:layout_marginLeft="8dp" android:id="@+id/generate"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="generate"/>
         </LinearLayout>
-    </FrameLayout>
+    </carbon.widget.LinearLayout>
 </FrameLayout>
